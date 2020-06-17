@@ -1,0 +1,54 @@
+<div class ="background-image">
+  <div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12 text-pad">
+      <h1 class="text-center">Corona Virus Update</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row row-pad">
+      <div class="col-lg-3 col-sm-3 col-xs-3"></div>
+        <div class="col-lg-6 col-sm-6 col-xs-6 text-center">
+          <label>Country: </label>
+            <select class="form-control" (change)="getCountry($event.target.value)">
+              <option>Select Country</option>
+              <option *ngFor = "let country of countries" value={{country.Slug}}>{{country.Country}}</option>
+            </select>
+        </div>
+      <div class="col-lg-3 col-sm-3 col-xs-3"></div>
+    </div>
+  </div>
+  
+  <div class="row row-btn">
+    <div class="col-lg-12 col-sm-12 col-xs-12 text-center">
+      <button type="button" class="btn btn-primary" (click)="getCoronaData()">Get Corovirus Data</button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row top-pad">
+      <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="row">
+          <div class="col-lg-4 col-sm-4 col-xs-4 text-center">
+            <h4>Total Confirmed Cases</h4>
+            <div class="text-align text-weight">
+              {{confirmed}}
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-4 col-xs-4 text-center">
+            <h4>Total Recovered Cases</h4>
+              <div class="text-align text-weight">
+                {{recovered}}
+              </div>
+          </div>
+          <div class="col-lg-4 col-sm-4 col-xs-4 text-center mar-btm">
+            <h4>Total Death Cases</h4>
+              <div class="text-align text-weight">
+                {{deaths}}
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
